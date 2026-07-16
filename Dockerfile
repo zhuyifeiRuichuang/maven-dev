@@ -4,8 +4,8 @@ FROM maven:3.8.7-openjdk-18
 # 创建存放git 的目录
 RUN mkdir -p /usr/local/git
 
-# 在线下载 git 源码包（Oracle Linux 使用 microdnf，包名对应红帽系）
-RUN microdnf install -y wget gcc make openssl-devel zlib-devel libcurl-devel expat-devel gettext-devel perl-CPAN \
+# 在线下载 git 源码包（补充 diffutils 提供 cmp 命令）
+RUN microdnf install -y wget gcc make openssl-devel zlib-devel libcurl-devel expat-devel gettext-devel perl-CPAN diffutils \
     && wget -O /tmp/git.tar.gz https://www.kernel.org/pub/software/scm/git/git-2.55.0.tar.gz
 
 # 解压包到指定目录，编译安装，删除压缩包
