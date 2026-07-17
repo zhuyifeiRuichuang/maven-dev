@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   build-and-push:
-    runs-on: dev
+    runs-on: ubuntu-latest
     env:
       IMAGE_NAME: maven-dev
       TAG_DEV1: dev1
