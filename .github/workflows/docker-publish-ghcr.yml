@@ -17,11 +17,10 @@ concurrency:
 
 jobs:
   build-and-push:
-    runs-on: ubuntu-latest
+    runs-on: dev
     env:
-      IMAGE_NAME: apachehive
+      IMAGE_NAME: maven-dev
       TAG_DEV1: dev1
-      TAG_DEV2: dev2
 
     steps:
       - name: Checkout
