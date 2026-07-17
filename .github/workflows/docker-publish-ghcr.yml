@@ -59,12 +59,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           tags: |
             ghcr.io/${{ env.OWNER_LOWER }}/${{ env.IMAGE_NAME }}:${{ env.TAG_DEV1 }}
-          #   ghcr.io/${{ env.OWNER_LOWER }}/${{ env.IMAGE_NAME }}:${{ env.TAG_DEV1 }}-${{ env.SHORT_SHA }}
-          cache-from: type=registry,ref=ghcr.io/${{ env.OWNER_LOWER }}/${{ env.IMAGE_NAME }}:cache-dev1
-          cache-to: type=registry,ref=ghcr.io/${{ env.OWNER_LOWER }}/${{ env.IMAGE_NAME }}:cache-dev1,mode=max
 
       - name: Post-check (log pushed tags)
         run: |
           echo "pushed tags:"
           echo "  ghcr.io/${OWNER_LOWER}/${IMAGE_NAME}:${TAG_DEV1}"
-          # echo "  ghcr.io/${OWNER_LOWER}/${IMAGE_NAME}:${TAG_DEV1}-${SHORT_SHA}"
